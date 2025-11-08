@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+   
+    <div class="login">
+        <div>
+            <a href="index.html"><img src="logo.png" alt="لوگو"></a>
+        </div>
+        <h1>ورود</h1>
+        <div>
+            <label class="label1">نام کاربری را وارد کنید</label>
+            <input class="input1" type="text" name="nameusername"
+            id="idusername" placeholder="username">
+        </div>
+        <div>
+            <label class="label2">رمز عبور را وارد کنید</label>
+            <input class="input2" type="password" name="namepassword"
+            id="idpassword" placeholder="password">
+        </div>
+        <div>
+            <button type="button" onclick="LoginBtn()">ورود</button>  
+        </div>
+             <p>ورود شما به معنای پذیرش
+            <a href="#">شرایط فون لند</a>
+            و<a href="#"> قوانین حریم خصوصی
+            </a>است</p>
+    </div>
+    <script>
+         function LoginBtn(){
+            txtusername=document.getElementById("idusername");
+            ttxpassword=document.getElementById("idpassword");
+            divAlert= document.getElementById("divalert");
+            resultlogin= fnlogin(txtusername.value,ttxpassword.value);
+            if(resultlogin==0){
+                txtusername.style.border="2px solid red";
+                ttxpassword.style.border="2px solid red";
+                divAlert.innerText="نام کاربری ورمز وارد شده نامعتبر است!";
+                divAlert.style.color="red";
+            }
+            else if(resultlogin==1)
+            {
+                txtusername.style.border="2px solid green";
+                ttxpassword.style.border="2px solid green";
+                divAlert.innerText="ورود با موفقیت";
+                divAlert.style.removeProperty("color");
+            }
+         }
+ 
+         function fnlogin(username, password) {
+            console.log('start')
+            console.log(username+" "+password);
+
+                if (username.length < 2 || password.length < 2) {
+                    return 0;
+                }
+             console.log('start2')
+                
+                if(username=="m.younes20" && password=="247557422024")
+                   return 1;
+                 else
+                   return 0;
+
+              console.log('end')
+
+            }
+       
+        console.log("page start")
+       
+       </script>
+</body>
+</html>
